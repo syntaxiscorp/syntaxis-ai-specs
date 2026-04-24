@@ -1,0 +1,6 @@
+- Tablero : Visualizar a todos los usuarios con la informacion de Nombre - Apellido - Rut - Rol - PEP Obra - Nombre Obra - Estado. El table lo visualiza unicamente el administrador del sitio.
+	- Filtros : 
+		- Rol : Selector (Perfiles)
+		- Nombre : Input
+		- Estado Colaborador:  Selector (Activo / Inactivo)
+		- Obra : Selector
