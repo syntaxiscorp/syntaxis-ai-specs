@@ -4,7 +4,7 @@
 - **Platform**: jira
 - **Last Synced**: 2026-04-28
 - **Epics Created**: 9 — SMAT-1, SMAT-6, SMAT-7, SMAT-8, SMAT-9, SMAT-66, SMAT-75, SMAT-92, SMAT-101
-- **Stories Created**: 24 — SMAT-2, SMAT-10, SMAT-11, SMAT-12, SMAT-13, SMAT-14, SMAT-15, SMAT-16, SMAT-17, SMAT-18, SMAT-19, SMAT-20, SMAT-21, SMAT-22, SMAT-62, SMAT-67, SMAT-68, SMAT-76, SMAT-77, SMAT-78, SMAT-79, SMAT-94, SMAT-93, SMAT-102
+- **Stories Created**: 25 — SMAT-2, SMAT-10, SMAT-11, SMAT-12, SMAT-13, SMAT-14, SMAT-15, SMAT-16, SMAT-17, SMAT-18, SMAT-19, SMAT-20, SMAT-21, SMAT-22, SMAT-62, SMAT-67, SMAT-68, SMAT-76, SMAT-77, SMAT-78, SMAT-79, SMAT-94, SMAT-93, SMAT-102, SMAT-106
 - **Stories Pending**: 0
 
 ## Metadata
@@ -12,8 +12,8 @@
 - **Generado**: 2026-04-23
 - **Método de Priorización**: RICE Scoring + MoSCoW
 - **Método de Estimación**: Fibonacci + Planning Poker + T-Shirt
-- **Total Historias**: 24
-- **Total Story Points**: 144
+- **Total Historias**: 25
+- **Total Story Points**: 149
 
 ---
 
@@ -56,10 +56,10 @@ Las funcionalidades **Should Have** (vista Física, tipos/estados de obra, cierr
 - **Prioridad**: Must / Should Have
 
 ### Épica 5: Control de Avances
-- **Descripción**: Vistas de control (Gantt, PTS, Física), registro de avances por partida, cierre de control, cierre de validación y descarga post-validación.
+- **Descripción**: Vistas de control (Gantt, PTS, Física), registro de avances por partida, cierre de control, cierre de validación y descarga post-validación. Incluye el tablero central de administración de avances con acceso directo a todas las vistas y acciones por obra.
 - **Objetivo de Negocio**: OB-2, OB-3 — Cierre semanal en tiempo y trazabilidad completa.
-- **Historias**: US-010, US-011, US-012, US-013
-- **Total Puntos**: 31
+- **Historias**: US-010, US-011, US-012, US-013, US-025
+- **Total Puntos**: 36
 - **Prioridad**: Must / Should Have
 
 ### Épica 6: Integración Comunas y Regiones
@@ -107,7 +107,8 @@ Las funcionalidades **Should Have** (vista Física, tipos/estados de obra, cierr
 | 9    | US-006 | Gestión de Sub-Etapas                         | Obras                            | 3      | S       | Must    | US-005                  |
 | 10   | US-008 | Carga Semanal de Archivo XML                  | Cargas                           | 13     | XL      | Must    | US-004, US-005          |
 | 11   | US-015 | Administración de Cargas Semanales            | Cargas                           | 8      | L       | Must    | US-008                  |
-| 12   | US-010 | Control de Avances — Vistas Gantt y PTS       | Control de Avances               | 13     | XL      | Must    | US-008                  |
+| 12   | US-025 | Administración de Avances — Vista Central     | Control de Avances               | 5      | M       | Must    | US-004, US-008, US-010, US-012, US-013 |
+| 13   | US-010 | Control de Avances — Vistas Gantt y PTS       | Control de Avances               | 13     | XL      | Must    | US-008                  |
 | 13   | US-012 | Cierre de Control por Controlador             | Control de Avances               | 5      | M       | Must    | US-010                  |
 | 14   | US-013 | Cierre de Validación (Manual y Automático)    | Control de Avances               | 8      | L       | Must    | US-012                  |
 | 15   | US-007 | Gestión de Tipos y Estados de Obra            | Obras                            | 2      | XS      | Should  | US-001                  |
@@ -126,8 +127,8 @@ Las funcionalidades **Should Have** (vista Física, tipos/estados de obra, cierr
 ## Plan de Lanzamiento
 
 ### Fase 1 — MVP (Sprints 1–10)
-**Historias**: US-001, US-016, US-017, US-002, US-003, US-004, US-014, US-005, US-006, US-008, US-015, US-010, US-012, US-013, US-018, US-019, US-020, US-021  
-**Puntos totales**: 103  
+**Historias**: US-001, US-016, US-017, US-002, US-003, US-004, US-014, US-005, US-006, US-008, US-015, US-025, US-010, US-012, US-013, US-018, US-019, US-020, US-021  
+**Puntos totales**: 108
 **Sprints estimados**: 10 sprints de ~10 puntos promedio  
 **Resultado**: Sistema web operativo para el ciclo semanal de control de avance físico + app móvil (iOS/Android) con registro de avances, cierre de control y validación en campo.
 
@@ -151,6 +152,7 @@ US-001 (Login)
                     └── US-008 (Carga XML)
                           ├── US-015 (Administración de Cargas) ← también depende de US-009, US-013
                           └── US-010 (Vistas Gantt/PTS)
+                                ├── US-025 (Administración Avances) ← también depende de US-004, US-012, US-013
                                 └── US-012 (Cierre Control)
                                       └── US-013 (Cierre Validación)
                                             └── US-015 (canDownloadActivo)
