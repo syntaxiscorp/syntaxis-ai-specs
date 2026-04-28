@@ -3,8 +3,8 @@
 ## Sync Status
 - **Platform**: jira
 - **Last Synced**: 2026-04-28
-- **Epics Created**: 7 — SMAT-1, SMAT-6, SMAT-7, SMAT-8, SMAT-9, SMAT-66, SMAT-75
-- **Stories Created**: 21 — SMAT-2, SMAT-10, SMAT-11, SMAT-12, SMAT-13, SMAT-14, SMAT-15, SMAT-16, SMAT-17, SMAT-18, SMAT-19, SMAT-20, SMAT-21, SMAT-22, SMAT-62, SMAT-67, SMAT-68, SMAT-76, SMAT-77, SMAT-78, SMAT-79
+- **Epics Created**: 9 — SMAT-1, SMAT-6, SMAT-7, SMAT-8, SMAT-9, SMAT-66, SMAT-75, SMAT-92, SMAT-101
+- **Stories Created**: 24 — SMAT-2, SMAT-10, SMAT-11, SMAT-12, SMAT-13, SMAT-14, SMAT-15, SMAT-16, SMAT-17, SMAT-18, SMAT-19, SMAT-20, SMAT-21, SMAT-22, SMAT-62, SMAT-67, SMAT-68, SMAT-76, SMAT-77, SMAT-78, SMAT-79, SMAT-94, SMAT-93, SMAT-102
 - **Stories Pending**: 0
 
 ## Metadata
@@ -12,8 +12,8 @@
 - **Generado**: 2026-04-23
 - **Método de Priorización**: RICE Scoring + MoSCoW
 - **Método de Estimación**: Fibonacci + Planning Poker + T-Shirt
-- **Total Historias**: 21
-- **Total Story Points**: 123
+- **Total Historias**: 24
+- **Total Story Points**: 144
 
 ---
 
@@ -76,6 +76,20 @@ Las funcionalidades **Should Have** (vista Física, tipos/estados de obra, cierr
 - **Total Puntos**: 23
 - **Prioridad**: Must Have
 
+### Épica 8: Alertas y Notificaciones
+- **Descripción**: Módulo de alertas por correo electrónico para mantener informados a los usuarios ante eventos clave del sistema. El Administrador gestiona tipos de alertas (CRUD) con plantillas dinámicas vinculadas a eventos (carga procesada, lote cerrado, validación cerrada, error de carga, etc.). El motor de despacho envía correos de forma asíncrona con reintentos automáticos y registra el historial de envíos.
+- **Objetivo de Negocio**: OB-3, OB-4 — Trazabilidad de eventos críticos y notificación oportuna a los equipos de obra.
+- **Historias**: US-022, US-023
+- **Total Puntos**: 13
+- **Prioridad**: Should Have
+
+### Épica 9: Worker de Notificaciones
+- **Descripción**: Servicio de fondo (.NET Worker Service) independiente de la API, dedicado al despacho asíncrono de correos electrónicos. Consume la cola de trabajos generados por el módulo de alertas (Épica 8), aplica reintentos automáticos con Polly (3 intentos, backoff exponencial) y circuit breaker, registra el historial de envíos y expone un health check. Proveedores de correo switcheables: SMTP (MailKit) / SendGrid.
+- **Objetivo de Negocio**: OB-3, OB-4 — Asegurar el envío confiable de alertas sin impactar la disponibilidad de la API.
+- **Historias**: US-024
+- **Total Puntos**: 8
+- **Prioridad**: Should Have
+
 ---
 
 ## Backlog Priorizado
@@ -103,6 +117,9 @@ Las funcionalidades **Should Have** (vista Física, tipos/estados de obra, cierr
 | 19   | US-019 | Mobile — Registro de Avances (Controlador)    | Aplicación Móvil                 | 8      | L       | Must    | US-018, US-010          |
 | 20   | US-020 | Mobile — Cierre de Control (Controlador)      | Aplicación Móvil                 | 5      | M       | Must    | US-019, US-012          |
 | 21   | US-021 | Mobile — Cierre de Validación (Validador)     | Aplicación Móvil                 | 5      | M       | Must    | US-020, US-013          |
+| 22   | US-022 | Administración de Tipos de Alerta             | Alertas y Notificaciones         | 5      | M       | Should  | US-001                  |
+| 23   | US-023 | Envío Automático de Alertas por Correo        | Alertas y Notificaciones         | 8      | L       | Should  | US-022                  |
+| 24   | US-024 | Worker de Despacho de Correos (.NET Worker)   | Worker de Notificaciones         | 8      | L       | Should  | US-022, US-023          |
 
 ---
 
@@ -114,10 +131,10 @@ Las funcionalidades **Should Have** (vista Física, tipos/estados de obra, cierr
 **Sprints estimados**: 10 sprints de ~10 puntos promedio  
 **Resultado**: Sistema web operativo para el ciclo semanal de control de avance físico + app móvil (iOS/Android) con registro de avances, cierre de control y validación en campo.
 
-### Fase 2 — v1.1 (Sprints 11–12)
-**Historias**: US-007, US-009, US-011  
-**Puntos totales**: 9  
-**Resultado**: Vista Física habilitada, gestión de catálogos de tipos y estados de obra.
+### Fase 2 — v1.1 (Sprints 11–14)
+**Historias**: US-007, US-009, US-011, US-022, US-023, US-024  
+**Puntos totales**: 30  
+**Resultado**: Vista Física habilitada, gestión de catálogos de tipos y estados de obra, módulo completo de alertas por correo electrónico con Worker Service dedicado.
 
 ---
 
@@ -148,6 +165,11 @@ US-018 (Auth Mobile) ← depende de SSO Salfa (US-001)
   └── US-019 (Registro Avances Mobile) ← también depende de US-010 (endpoints)
         └── US-020 (Cierre Control Mobile) ← también depende de US-012 (endpoints)
               └── US-021 (Cierre Validación Mobile) ← también depende de US-013 (endpoints)
+
+[Alertas y Notificaciones]
+US-022 (Admin Tipos de Alerta) ← depende de US-001
+  └── US-023 (Envío Automático Alertas) ← Disparado por eventos: US-008, US-012, US-013
+        └── US-024 (Worker Notificaciones) ← Procesa cola encolada por US-023; Polly + Circuit Breaker
 ```
 
 ---
@@ -163,4 +185,7 @@ US-018 (Auth Mobile) ← depende de SSO Salfa (US-001)
 | La BD de comunes de SALFA (US-016, US-017) es un sistema externo de solo lectura. Si cambia su esquema o está no disponible, los selectores de Región/Comuna fallarán. | Medio | Configurar caché IMemoryCache TTL 60 min + manejo de 503 explícito. Documentar contrato del esquema con equipo SALFA. |
 | La app móvil (US-018–US-021) depende del comportamiento de deep links OAuth en iOS y Android, que puede variar entre versiones de OS. | Medio | Testear en dispositivos físicos iOS 16+ y Android 10+ desde el inicio. Usar @capacitor/browser (no cordova). |
 | El modo offline de US-019 puede generar conflictos si el mismo nodo es avanzado desde la web y la app simultáneamente. | Medio | Implementar política last-write-wins con timestamp en el servidor. Documentar la restricción de uso concurrente. |
+| El módulo de alertas (US-022/US-023) depende de la correcta instrumentación de Domain Events en handlers existentes. Si se omite un evento, la alerta no se disparará. | Medio | Definir contrato de Domain Events como parte del diseño de US-022 antes de instrumentar en US-023. |
+| El proveedor SMTP/SendGrid puede tener límites de envío en entornos de staging. | Bajo | Usar stub de IEmailSender en tests; configurar proveedor real solo en producción. |
+| El Worker Service (US-024) comparte INotificacionQueue con la API vía Channel<T> in-memory. Si el Worker se reinicia, se pierden los trabajos en cola no procesados. | Medio | Para producción, evaluar migrar cola a Redis Streams o Azure Service Bus para persistencia entre reinicios. |
 
