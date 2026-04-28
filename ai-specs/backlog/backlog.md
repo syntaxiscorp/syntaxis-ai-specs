@@ -1,5 +1,12 @@
 # Product Backlog: Sistema SMAT
 
+## Sync Status
+- **Platform**: jira
+- **Last Synced**: 2026-04-28
+- **Epics Created**: 5 — SMAT-1, SMAT-6, SMAT-7, SMAT-8, SMAT-9
+- **Stories Created**: 14 — SMAT-2, SMAT-10, SMAT-11, SMAT-12, SMAT-13, SMAT-14, SMAT-15, SMAT-16, SMAT-17, SMAT-18, SMAT-19, SMAT-20, SMAT-21, SMAT-22
+- **Stories Pending**: 0
+
 ## Metadata
 - **PRD Fuente**: `ai-specs/specs/PRD.md`
 - **Generado**: 2026-04-23
