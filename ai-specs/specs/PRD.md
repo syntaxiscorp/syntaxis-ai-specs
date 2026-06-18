@@ -25,7 +25,7 @@ tags:
 ### REQ-02: Visualización de Estados de Restricción en Nodos
 * **Tipo:** UI/UX & Data Binding Jerárquico
 * **Descripción:** Homologar la visualización del estado de las restricciones dentro del Tree-Table para que se renderice con la misma estética que en las tareas tradicionales.
-* **Complejidad de Estimación para la IA:** Mapear el badge de estado directamente en las filas del Tree-Table evaluando si la restricción afecta a un nodo hoja (actividad final) o si debe resumir de forma visual el estado de sus nodos dependientes.
+* **Complejidad de Estimación para la IA:** Mapear el badge de estado directamente en las filas del Tree-Table evaluando si la restricción afecta a un nodo hoja (actividad final).
 
 ### REQ-03: Ajuste Estético de la Columna "Nombre" (Respetando Indentación)
 * **Tipo:** Refactor UI CSS Avanzado

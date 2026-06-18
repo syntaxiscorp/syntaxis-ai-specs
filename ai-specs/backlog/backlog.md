@@ -45,18 +45,18 @@ El MVP incluye todas las historias clasificadas como **Must Have**: la correcci�
 
 | Rango | ID     | Título                                              | Épica | Puntos | T-Shirt | MoSCoW     | Dependencias |
 |-------|--------|------------------------------------------------------|-------|--------|---------|------------|--------------|
-| 1     | US-012 | Corrección de deep linking en notificaciones         | 4     | 3      | S       | Must       | —            |
-| 2     | US-006 | Control global de expansión y colapso                | 1     | 3      | S       | Must       | —            |
-| 3     | US-001 | Interfaz de filtros por columna en Tree-Table        | 1     | 5      | M       | Must       | —            |
-| 4     | US-002 | Algoritmo recursivo de filtrado con ancestros        | 1     | 8      | L       | Must       | US-001       |
-| 5     | US-009 | Flexibilización de selección de fechas               | 2     | 3      | S       | Should     | —            |
-| 6     | US-003 | Badge de estado de restricción en nodos hoja         | 1     | 3      | S       | Should     | —            |
-| 7     | US-005 | Ajuste de alineación de texto en columna Nombre      | 1     | 2      | XS      | Should     | —            |
-| 8     | US-007 | Cierre directo de restricciones                      | 2     | 5      | M       | Could      | —            |
-| 9     | US-011 | Validación de integridad jerárquica post-carga       | 3     | 5      | M       | Could      | US-010       |
-| 10    | US-008 | Búsqueda predictiva de responsables                  | 2     | 5      | M       | Could      | —            |
-| 11    | US-004 | Estado de restricción resumido en nodos padre        | 1     | 5      | M       | Could      | US-003       |
-| 12    | US-010 | Carga de Excel para actualización masiva             | 3     | 8      | L       | Could      | —            |
+| 1     | US-012 | Corrección de deep linking en notificaciones         | 4     | 3      | S       | Must       | —            | 
+| 2     | US-006 | Control global de expansión y colapso                | 1     | 3      | S       | Must       | —            |  8 hh C
+| 3     | US-001 | Interfaz de filtros por columna en Tree-Table        | 1     | 5      | M       | Must       | —            |  US-002
+| 4     | US-002 | Algoritmo recursivo de filtrado con ancestros        | 1     | 8      | L       | Must       | US-001       |  US-001 + US-002 -> 18 hh C / B
+| 5     | US-009 | Flexibilización de selección de fechas               | 2     | 3      | S       | Should     | —            |  4 HH  
+| 6     | US-003 | Badge de estado de restricción en nodos hoja         | 1     | 3      | S       | Should     | —            |  10 HH C / B
+| 7     | US-005 | Ajuste de alineación de texto en columna Nombre      | 1     | 2      | XS      | Should     | —            |  0 HH
+| 8     | US-007 | Cierre directo de restricciones                      | 2     | 5      | M       | Could      | —            |  8 HH  C / B 
+| 9    | US-008 | Búsqueda predictiva de responsables                  | 2     | 5      | M       | Could      | —             |  0 HH
+| 10    | US-010 | Carga de Excel para actualización masiva             | 3     | 8      | L       | Could      | —            |  50 HH  
+| 11     | US-011 | Validación de integridad jerárquica post-carga       | 3     | 5      | M       | Could      | US-010      |  2 HH
+  TOTAL :                                                                                                                                100 HH 
 
 ## Plan de Liberación
 
