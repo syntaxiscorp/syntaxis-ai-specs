@@ -697,3 +697,29 @@ flowchart LR
 | **2. Planeación** | `/create-backlog-plan` | `backlog.md` + `us-XXX.md` — Backlog priorizado con BDD | 1 ejecución |
 | **2b. (Opcional)** | `/create-diagrams` | `diagrams/*.md` — 5 diagramas visuales | 1 ejecución |
 | **3. Publicación** | `/push-backlog-plan jira` | Épicas y Stories en Jira con dependencias | 1 ejecución |
+
+---
+
+## 10. Glosario
+
+| Término | Definición |
+|---------|-----------|
+| **ADF** | Atlassian Document Format. Formato JSON nativo de Jira para descripciones de issues. Obligatorio en `/push-backlog-plan` para evitar problemas de doble escape. |
+| **Agente** | Perfil de IA especializado que ejecuta un comando (ej: `product-manager-ba`, `backlog-planner`). Cada agente tiene instrucciones específicas en su archivo `.md`. |
+| **Artefacto** | Archivo producido por un comando (PRD.md, backlog.md, us-XXX.md, diagramas). Los artefactos son la entrada del siguiente comando en el pipeline. |
+| **Backlog** | Lista priorizada de épicas e historias de usuario que define el trabajo a realizar. Se materializa en `backlog.md` y se sincroniza a Jira. |
+| **BDD** | Behavior-Driven Development. Metodología que describe el comportamiento esperado del software usando escenarios Given/When/Then (Gherkin). Cada US incluye 3+ escenarios BDD. |
+| **Comando** | Instrucción CLI (ej: `/create-prd`) que invoca a un agente IA para producir uno o más artefactos. |
+| **DDD** | Domain-Driven Design. Arquitectura en capas (Presentation - Application - Domain - Infrastructure) usada en el backend. |
+| **Épica** | Contenedor de alto nivel en Jira que agrupa múltiples historias de usuario relacionadas. Se crea a partir de las épicas definidas en `backlog.md`. |
+| **Fibonacci** | Secuencia numérica (1, 2, 3, 5, 8, 13, 21) usada para estimar Story Points. La brecha creciente entre números evita falsa precisión. |
+| **Fuente Única de Verdad** | Principio de diseño: `PRD.md` es el documento maestro. Todos los demás artefactos derivan de él y cualquier cambio en requisitos se propaga automáticamente. |
+| **Gherkin** | Lenguaje estructurado para escribir escenarios BDD usando las palabras clave Given (Dado), When (Cuando), Then (Entonces). |
+| **Historia de Usuario (US)** | Unidad funcional más pequeña del backlog. Sigue el formato "Como [rol], quiero [función], para [beneficio]". Incluye estimación, prioridad, BDD y notas técnicas. |
+| **MoSCoW** | Método de priorización que clasifica historias en Must Have, Should Have, Could Have y Won't Have. Se mapea a prioridades de Jira (Highest/High/Medium). |
+| **MVP** | Minimum Viable Product. Versión inicial del producto con solo las funcionalidades Must Have que entregan valor core. |
+| **Pipeline** | Secuencia de comandos que transforman una idea en tickets de Jira. Consta de 3 fases principales: Estrategia, Planeación y Publicación. |
+| **PRD** | Product Requirements Document. Artefacto raíz del pipeline que contiene visión, objetivos, usuarios, requisitos funcionales y no funcionales, modelo de datos y arquitectura. |
+| **RICE** | Método de priorización cuantitativa: RICE Score = (Reach × Impact × Confidence) / Effort. Usa Reach (alcance), Impact (impacto), Confidence (confianza) y Effort (esfuerzo en Story Points). |
+| **Spec-Driven** | Enfoque de desarrollo donde las especificaciones (PRD, backlog, diagramas) se crean antes que el código y guían todo el proceso. |
+| **Story Points** | Unidad de medida de esfuerzo usando la secuencia Fibonacci. Representa la complejidad relativa, no tiempo absoluto. |

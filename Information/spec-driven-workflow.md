@@ -491,3 +491,33 @@ flowchart LR
 | **5. Implementacion** | `/develop-backend`, `/develop-frontend` | Plan en `docs/plans/` | Codigo + tests |
 | **6. Commit + PR** | `/commit` | Cambios stageados | Git commit + PR |
 | **7. Sincronizacion** | `/push-backlog-plan` | `backlog.md` + `us-XXX.md` | Epicas + Stories en Jira/GitHub |
+
+---
+
+## 8. Glosario
+
+| Término | Definición |
+|---------|-----------|
+| **ADF** | Atlassian Document Format. Formato JSON nativo de Jira para descripciones de issues. |
+| **Agente** | Perfil de IA especializado que ejecuta un comando (ej: `product-manager-ba`, `backend-developer`). |
+| **Artefacto** | Archivo producido por un comando y consumido por el siguiente en el pipeline. |
+| **Backlog** | Lista priorizada de épicas e historias de usuario. Se materializa en `backlog.md`. |
+| **BDD** | Behavior-Driven Development. Descripción del comportamiento usando escenarios Given/When/Then. |
+| **Comando** | Instrucción CLI (ej: `/create-prd`) que invoca a un agente IA. El pipeline completo tiene 17 comandos. |
+| **Cypress** | Framework de testing frontend usado para escribir tests end-to-end. |
+| **DDD** | Domain-Driven Design. Arquitectura en capas para el backend (Presentation, Application, Domain, Infrastructure). |
+| **Épica** | Contenedor de alto nivel que agrupa múltiples historias de usuario relacionadas. |
+| **Fibonacci** | Secuencia (1, 2, 3, 5, 8, 13, 21) para estimar Story Points. |
+| **Fuente Única de Verdad** | Principio: `PRD.md` es el documento maestro del que derivan todos los demás artefactos. |
+| **Gherkin** | Lenguaje Given/When/Then para escribir escenarios BDD ejecutables. |
+| **Historia de Usuario (US)** | Unidad funcional más pequeña del backlog con formato "Como... quiero... para...". |
+| **Linter** | Herramienta de análisis estático de código que verifica estilo y errores comunes. |
+| **MoSCoW** | Priorización: Must, Should, Could, Won't Have. Se mapea a prioridades en Jira. |
+| **MVP** | Minimum Viable Product. Versión inicial con funcionalidades core. |
+| **Pipeline** | Secuencia de 17 comandos en 7 fases: Estrategia → Backlog → Mantenimiento → Planificación → Implementación → Versionado → Sincronización. |
+| **PRD** | Product Requirements Document. Artefacto raíz con visión, requisitos, modelo de datos y arquitectura. |
+| **Pull Request (PR)** | Solicitud de revisión de código en GitHub creada por el comando `/commit`. |
+| **RICE** | Priorización cuantitativa: (Reach × Impact × Confidence) / Effort. |
+| **Spec-Driven** | Enfoque donde las especificaciones guían todo el proceso de desarrollo, desde la idea hasta el código. |
+| **Story Points** | Unidad de esfuerzo relativo usando Fibonacci. |
+| **Typecheck** | Verificación de tipos en TypeScript que se ejecuta como paso obligatorio antes del commit. |
