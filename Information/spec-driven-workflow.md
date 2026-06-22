@@ -9,10 +9,10 @@ El pipeline completo abarca 17 comandos agente organizados en 7 fases. Transform
 
 ```mermaid
 flowchart LR
-    classDef strategic fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
-    classDef planning fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px
-    classDef execution fill:#d5e8d4,stroke:#82b366,stroke-width:2px
-    classDef output fill:#ffe6cc,stroke:#d79b00,stroke-width:2px
+    classDef strategic fill:#e1d5e7,stroke:#9673a6,stroke-width:2px,color:#1e293b
+    classDef planning fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px,color:#1e293b
+    classDef execution fill:#d5e8d4,stroke:#82b366,stroke-width:2px,color:#1e293b
+    classDef output fill:#ffe6cc,stroke:#d79b00,stroke-width:2px,color:#1e293b
 
     P1["Fase 1: Estrategia"]:::strategic
     P2["Fase 2-3: Planeacion"]:::planning
@@ -40,7 +40,7 @@ flowchart LR
 ```mermaid
 flowchart TD
     classDef cmd fill:#2563eb,stroke:#1d4ed8,stroke-width:2px,color:#fff
-    classDef phase fill:#f0f9ff,stroke:#0284c7,stroke-width:3px
+    classDef phase fill:#f0f9ff,stroke:#0284c7,stroke-width:3px,color:#1e293b
 
     subgraph Fase1["Fase 1: Estrategia"]
         C1["/create-prd"]:::cmd
@@ -104,10 +104,10 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    classDef agent fill:#d5e8d4,stroke:#82b366,stroke-width:2px
-    classDef cmd fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px
-    classDef artifact fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
-    classDef external fill:#f5f5f5,stroke:#666,stroke-width:2px,stroke-dasharray:5 5
+    classDef agent fill:#d5e8d4,stroke:#82b366,stroke-width:2px,color:#1e293b
+    classDef cmd fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px,color:#1e293b
+    classDef artifact fill:#e1d5e7,stroke:#9673a6,stroke-width:2px,color:#1e293b
+    classDef external fill:#f5f5f5,stroke:#666,stroke-width:2px,stroke-dasharray:5 5,color:#1e293b
 
     ProjectContext["Contexto del Proyecto"]
 
@@ -199,9 +199,9 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    classDef input fill:#fff3cd,stroke:#ffc107,stroke-width:2px
-    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px
-    classDef output fill:#f3e8ff,stroke:#9333ea,stroke-width:2px
+    classDef input fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#1e293b
+    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#1e293b
+    classDef output fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#1e293b
 
     IN[("Contexto del proyecto")]:::input
     A[1. Analizar problema]:::step
@@ -226,9 +226,9 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    classDef input fill:#fff3cd,stroke:#ffc107,stroke-width:2px
-    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px
-    classDef output fill:#f3e8ff,stroke:#9333ea,stroke-width:2px
+    classDef input fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#1e293b
+    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#1e293b
+    classDef output fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#1e293b
 
     PRD[("PRD.md")]:::input
 
@@ -253,9 +253,9 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    classDef req fill:#f8fafc,stroke:#94a3b8,stroke-width:2px
-    classDef bdd fill:#dcfce7,stroke:#16a34a,stroke-width:2px
-    classDef tech fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    classDef req fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#1e293b
+    classDef bdd fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#1e293b
+    classDef tech fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
 
     A["Formato: Como... quiero... para..."]:::req
     B["Estimacion: Fibonacci + T-Shirt"]:::req
@@ -277,9 +277,9 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    classDef action fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
-    classDef artifact fill:#f3e8ff,stroke:#9333ea,stroke-width:2px
-    classDef sync fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    classDef action fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#1e293b
+    classDef artifact fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#1e293b
+    classDef sync fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
 
     ADD["/add-us crea nueva US"]:::action
     UPDATE["/update-us modifica US"]:::action
@@ -316,9 +316,9 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    classDef input fill:#fff3cd,stroke:#ffc107,stroke-width:2px
-    classDef plan fill:#dbeafe,stroke:#2563eb,stroke-width:2px
-    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px
+    classDef input fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#1e293b
+    classDef plan fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
+    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#1e293b
 
     TICKET[("Ticket Jira o US local")]:::input
 
@@ -356,9 +356,9 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px
-    classDef result fill:#dcfce7,stroke:#16a34a,stroke-width:2px
-    classDef check fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
+    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#1e293b
+    classDef result fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#1e293b
+    classDef check fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#1e293b
 
     PLAN[("Plan de implementacion")]
 
@@ -385,7 +385,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px
+    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#1e293b
     classDef output fill:#2563eb,stroke:#1d4ed8,stroke-width:2px,color:#fff
 
     CODE[("Cambios stageados")]
@@ -408,9 +408,9 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    classDef input fill:#fff3cd,stroke:#ffc107,stroke-width:2px
-    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px
-    classDef output fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+    classDef input fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#1e293b
+    classDef step fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#1e293b
+    classDef output fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#1e293b
 
     BACKLOG[("backlog.md")]:::input
     US[("us-XXX.md")]:::input
@@ -469,10 +469,10 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    classDef f1 fill:#e1d5e7,stroke:#9673a6,stroke-width:3px
-    classDef f2 fill:#dae8fc,stroke:#6c8ebf,stroke-width:3px
-    classDef f3 fill:#d5e8d4,stroke:#82b366,stroke-width:3px
-    classDef out fill:#ffe6cc,stroke:#d79b00,stroke-width:3px
+    classDef f1 fill:#e1d5e7,stroke:#9673a6,stroke-width:3px,color:#1e293b
+    classDef f2 fill:#dae8fc,stroke:#6c8ebf,stroke-width:3px,color:#1e293b
+    classDef f3 fill:#d5e8d4,stroke:#82b366,stroke-width:3px,color:#1e293b
+    classDef out fill:#ffe6cc,stroke:#d79b00,stroke-width:3px,color:#1e293b
 
     F1["F1: Estrategia"]:::f1
     F2["F2-3: Planeacion"]:::f2
